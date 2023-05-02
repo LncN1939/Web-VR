@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Museo De Musica</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-simple-sun-sky@^1.2.3/simple-sun-sky.js"></script>
+    <script src="/js/hoverable.js"></script>
+    <link rel="stylesheet" href="css/style.css" info-message="htmlSrc: #messageText">
+</head>
+
+<body>
+    <a-scene environment cursor="rayOrigin: mouse; fuse: false" raycaster="objects: .raycastable">
+        <a-assets>
+            <a-asset-item id="art2" src="assets/scene.gltf"></a-asset-item>
+            <img id="img1" src="assets/imagen1.jpg">
+            <img id="img2" src="assets/imagen2.jpeg">
+        </a-assets>
+
+        <a-simple-sun-sky sun-position="0.7 0.4 -1"></a-simple-sun-sky>
+
+        <a-image id="imagen1" class="border" src="#img1" data-src="imagen1.jpg" position="-2.850 1.491 -1.702"
+            rotation="0 90 0" width="1" height="1" depth="0.1" cursor="rayOrigin: mouse"
+            data-message="
+        Graduation de Kanye West es un álbum de hip-hop innovador con un sonido futurista y optimista. Destacan temas como Stronger y Good Life, y colaboraciones con T-Pain y Chris Martin de Coldplay. Es una obra maestra que ha resistido el paso del tiempo."
+            data-image="assets/imagen4.png">
+        </a-image>
+
+        <a-image id="imagen2" class="border" src="#img2" data-src="imagen2.jpeg" position="-2.850 1.491 1.267"
+            rotation="0 90 0" width="1" height="1" depth="0.1" cursor="rayOrigin: mouse"
+            data-message="Morale & The Big Steppers responde: con la idea bien asentada de que no existen los súper héroes ni las fuerzas inmaculadas… Existen los seres humanos, que cometen errores y dan pasos en falso durante la búsqueda de sentido y congruencia para nuestra estadía en el mundo."
+            data-image="assets/imagen5.jpg">
+        </a-image>
+        <a-entity id="Model" gltf-model="#art2"></a-entity>
+        <a-entity sound="src:assets/Cipher.mp3 ; autoplay: true; loop: true"></a-entity>
+    </a-scene>
+
+    <div id="mensaje" class="oculto">
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
