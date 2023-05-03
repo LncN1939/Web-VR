@@ -19,9 +19,9 @@
         </a-assets> 
 
         <a-simple-sun-sky sun-position="0.7 0.4 -1"></a-simple-sun-sky>
-        <a-entity id="Model" gltf-model="#art2"></a-entity>
+        <a-entity id="Model" gltf-model="#art2" aabb-collider></a-entity>
         <a-entity sound="src:assets/Cipher.mp3 ; autoplay: true; loop: true"></a-entity>
-
+        <a-entity id="camera" camera look-controls position="0 1.6 0" collision></a-entity>
         <a-image id="imagen1" class="border" src="#img1" data-src="imagen1.jpg" position="-2.850 1.491 -1.702"
             rotation="0 90 0" width="1" height="1" depth="0.1"
             data-message="
@@ -32,6 +32,7 @@
             rotation="0 90 0" width="1" height="1" depth="0.1"
             data-message="Morale & The Big Steppers responde: con la idea bien asentada de que no existen los súper héroes ni las fuerzas inmaculadas… Existen los seres humanos, que cometen errores y dan pasos en falso durante la búsqueda de sentido y congruencia para nuestra estadía en el mundo."
             data-image="assets/imagen5.jpg"></a-image>
+            
     </a-scene>
     <div id="mensaje" class="oculto">
     </div>
