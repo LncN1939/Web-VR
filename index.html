@@ -2,56 +2,81 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Museo De Musica</title>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-simple-sun-sky@^1.2.3/simple-sun-sky.js"></script>
-    <script src="/j s/hoverable.js"></script>
-    <link rel="stylesheet" href="css/style.css" info-message="htmlSrc: #messageText">
+  <meta charset="utf-8">
+  <title>Museo De Musica</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-simple-sun-sky@^1.2.3/simple-sun-sky.js"></script>
+  <script src="/j s/hoverable.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
+  <link rel="stylesheet" href="css/style.css" info-message="htmlSrc: #messageText">
 </head>
 
 <body>
-    <a-scene environment cursor="rayOrigin: mouse; fuse: false">
-        <a-assets>
-            <audio id="cancion1" style="display:none;">
-                <source src="assets/musica1.mp3" type="audio/mpeg">
-              </audio>
+  <a-scene environment cursor="rayOrigin: mouse; fuse: false">
+    <a-assets>
+      <audio id="cancion1" style="display:none;">
+        <source src="assets/musica1.mp3" type="audio/mpeg">
+      </audio>
 
-              <audio id="cancion2" style="display:none;">
-                <source src="assets/musica2.mp3" type="audio/mpeg">
-              </audio>
+      <audio id="cancion2" style="display:none;">
+        <source src="assets/musica2.mp3" type="audio/mpeg">
+      </audio>
 
-              <audio id="cancion2" style="display:none;">
-                <source src="assets/musica2.mp3" type="audio/mpeg">
-              </audio>
-            <img id="img1" src="assets/imagen1.jpg">
-            <img id="img2" src="assets/imagen2.jpeg">
-            <a-asset-item id="art2" src="assets/scene.gltf"></a-asset-item>
-        </a-assets> 
+      <audio id="cancion2" style="display:none;">
+        <source src="assets/musica2.mp3" type="audio/mpeg">
+      </audio>
 
-        <a-simple-sun-sky sun-position="0.7 0.4 -1"></a-simple-sun-sky>
-        <a-entity id="Model" gltf-model="#art2" aabb-collider></a-entity>
-        
-<!--inicio bloqueo wasd-->
-        <a-entity id="camera" camera look-controls position="0 1.6 0" collision></a-entity>
-        <!--final bloqueo wasd-->
-        <a-image id="imagen1" class="border" src="#img1" data-src="imagen1.jpg" position="-2.850 1.491 -1.702"
-    rotation="0 90 0" width="1" height="1" depth="0.1"
-    data-message="
+      <audio id="cancion3" style="display:none;">
+        <source src="assets/Annunakilandia.mp3" type="audio/mpeg">
+      </audio>
+
+      <audio id="cancion4" style="display:none;">
+        <source src="assets/Annunakilandia.mp3" type="audio/mpeg">
+      </audio>
+
+      <audio id="cancion4" style="display:none;">
+        <source src="assets/Made-Heaven.mp3" type="audio/mpeg">
+      </audio>
+
+      <img id="img1" src="assets/imagen1.jpg">
+      <img id="img2" src="assets/imagen2.jpeg">
+      <img id="img3" src="assets/calle-13.jpg">
+      <img id="img4" src="assets/madeHeaven.jpg">
+      <a-asset-item id="art2" src="assets/scene.gltf"></a-asset-item>
+    </a-assets>
+    <a-simple-sun-sky sun-position="0.7 0.4 -1"></a-simple-sun-sky>
+    <a-entity id="Model" gltf-model="#art2" aabb-collider material="visible: false;" static-body></a-entity>
+    <a-entity id="camera" camera="userHeight" universal-controls kinematic-body position="0 5 0"></a-entity>
+    
+    <!--inicio bloqueo wasd-->
+    <a-entity id="camera" camera look-controls position="0 1.6 0" collision></a-entity>
+    <!--final bloqueo wasd-->
+    <a-image id="imagen1" class="border" src="#img1" data-src="imagen1.jpg" position="-2.850 1.491 -1.702"
+      rotation="0 90 0" width="1" height="1" depth="0.1"
+      data-message="
     Graduation de Kanye West es un álbum de hip-hop innovador con un sonido futurista y optimista. Destacan temas como Stronger y Good Life, y colaboraciones con T-Pain y Chris Martin de Coldplay. Es una obra maestra que ha resistido el paso del tiempo."
-    data-image="assets/imagen4.png"
-    data-audio="assets/musica1.mp3"></a-image>
+      data-image="assets/imagen4.png" data-audio="assets/musica1.mp3"></a-image>
 
-<a-image id="imagen2" class="border" src="#img2" data-src="imagen2.jpeg" position="-2.850 1.491 1.267"
-    rotation="0 90 0" width="1" height="1" depth="0.1"
-    data-message="Morale & The Big Steppers responde: con la idea bien asentada de que no existen los súper héroes ni las fuerzas inmaculadas… Existen los seres humanos, que cometen errores y dan pasos en falso durante la búsqueda de sentido y congruencia para nuestra estadía en el mundo."
-    data-image="assets/imagen5.jpg"
-    data-audio="assets/musica2.mp3"></a-image>
-   <!-- <a-entity sound="src:assets/Cipher.mp3 ; autoplay: true; loop: true"></a-entity>-->
-    </a-scene>
-    <div id="mensaje" class="oculto">
-    </div>
-    <script src="/js/script.js"></script>
+    <a-image id="imagen2" class="border" src="#img2" data-src="imagen2.jpeg" position="-2.850 1.491 1.267"
+      rotation="0 90 0" width="1" height="1" depth="0.1"
+      data-message="Morale & The Big Steppers responde: con la idea bien asentada de que no existen los súper héroes ni las fuerzas inmaculadas… Existen los seres humanos, que cometen errores y dan pasos en falso durante la búsqueda de sentido y congruencia para nuestra estadía en el mundo."
+      data-image="assets/imagen5.jpg" data-audio="assets/musica2.mp3"></a-image>
+
+    <a-image id="imagen3" class="border" src="#img3" data-src="calle-13.jpg" position="2.850 1.491 0.859"
+      rotation="0 270 0" width="1" height="1" depth="0.1"
+      data-message="Entren los que quieran es el cuarto volumen del grupi de Calle 13, donde experimenta en el disco una nueva evolución en el estilo, utilizando más elementos del folclore latinoamericano, canción de autor, rock, merengue, entre otros, con un mayor compromiso social en las letras"
+      data-image="assets/calle-13.jpg" data-audio="assets/Annunakilandia.mp3"></a-image>
+
+    <a-image id="imagen4" class="border" src="#img4" data-src="calle-13.jpg" position="2.850 1.491 -2.285"
+      rotation="0 270 0" width="1" height="1" depth="0.1"
+      data-message="Made in Heaven -Hecho en el cielo- es el decimoquinto álbum de estudio de la banda británica Queen. De igual forma, supuso el último trabajo editado junto a su vocalista Freddie Mercury y a su bajista John Deacon, quien se retiró del grupo dos años después de la publicación de este disco. Fue lanzado el 6 de noviembre de 1995."
+      data-image="assets/madeHeaven.jpg" data-audio="assets/Made-Heaven.mp3"></a-image>
+
+    <!-- <a-entity sound="src:assets/Cipher.mp3 ; autoplay: true; loop: true"></a-entity>-->
+  </a-scene>
+  <div id="mensaje" class="oculto">
+  </div>
+  <script src="/js/script.js"></script>
 </body>
 
 </html>
